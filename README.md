@@ -1,6 +1,6 @@
 # Food-Delivery-Routing-Optimization (Fall 2023)
 
-Introduction
+# Introduction
 
 In today's fast-paced world, food delivery has become an essential service, seamlessly blending technology with logistics to bring convenience right to our doorsteps. One of the key challenges in optimizing these services lies in designing the most efficient routing strategies—from the restaurant to the customer's location. This is where algorithms like Shortest Path First (SPF) can make a significant impact. By finding the most efficient routes through complex city layouts and traffic conditions, we can enhance both delivery speed and reliability.
 
@@ -14,7 +14,7 @@ Project Objectives
     Minimize the time it takes for food deliveries, enhancing overall service efficiency.
     Improve customer experience by ensuring quicker, more reliable deliveries.
 
-Resources
+# Resources
 
     City Map Data: For this project, I am using a specially curated fake city map dataset to simulate and analyze various delivery routes. The dataset is designed to mimic a complex network of streets and intersections, offering a realistic environment for testing and optimizing routing algorithms. You can find the dataset in the starter code included in this repository.
 
