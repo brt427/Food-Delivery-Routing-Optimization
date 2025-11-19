@@ -1,25 +1,76 @@
-# Food-Delivery-Routing-Optimization (Fall 2023)
+# Food Delivery Routing Optimization
 
-# Introduction
+## What's This About?
 
-In today's fast-paced world, food delivery has become an essential service, seamlessly blending technology with logistics to bring convenience right to our doorsteps. One of the key challenges in optimizing these services lies in designing the most efficient routing strategies—from the restaurant to the customer's location. This is where algorithms like Shortest Path First (SPF) can make a significant impact. By finding the most efficient routes through complex city layouts and traffic conditions, we can enhance both delivery speed and reliability.
+Food delivery is everywhere now, and getting orders to customers fast is what separates good services from great ones. This project tackles that challenge head-on using graph theory and pathfinding algorithms.
 
-For this project, I'm diving deep into graph theory to model a city's street network, focusing on optimizing routes for food delivery services. The streets in the city are represented as weighted edges in a graph, where each vertex is an intersection or significant landmark. The weight of each edge is the time it takes to travel that street segment, which becomes a crucial factor in determining the most effective routes.
+The idea is simple: model a city as a graph where intersections are nodes and streets are edges, then find the fastest routes between restaurants and customers. I'm using Shortest Path First (SPF) algorithms to compute optimal delivery paths based on travel time.
 
-By leveraging this graph-based approach, I aim to develop algorithms that can efficiently compute the shortest and fastest delivery paths, ultimately reducing delivery times and boosting customer satisfaction.
-Project Objectives
+## Project Goals
 
-    Construct a city street network using graph theory principles.
-    Implement algorithms, such as Shortest Path First, to find optimal delivery routes.
-    Minimize the time it takes for food deliveries, enhancing overall service efficiency.
-    Improve customer experience by ensuring quicker, more reliable deliveries.
+- Build a graph representation of a city street network
+- Implement pathfinding algorithms (like Dijkstra's) to find optimal routes
+- Minimize delivery times by calculating the fastest paths
+- Create a foundation that could scale to real-world delivery optimization
 
-# Resources
+## The Dataset
 
-    City Map Data: For this project, I am using a specially curated fake city map dataset to simulate and analyze various delivery routes. The dataset is designed to mimic a complex network of streets and intersections, offering a realistic environment for testing and optimizing routing algorithms. You can find the dataset in the starter code included in this repository.
+I'm using a simulated city map to test the routing algorithms. It's fake, but it mimics the complexity of real urban street networks with multiple intersections and varying travel times.
 
-    Data Format: The dataset is organized into several text files, each containing records that represent the streets in the city. Every line in these files follows this format:
-    NODE1|NODE2|COST
-        NODE1 and NODE2 are nodes that denote key points, such as intersections or landmarks.
-        COST indicates the time cost to travel between NODE1 and NODE2.
-        This format allows each edge to be viewed as a bi-directional path between two significant locations within the city, modeled as vertices in a graph.
+### Data Format
+
+The city data lives in text files where each line represents a street:
+
+```
+NODE1|NODE2|COST
+```
+
+- **NODE1** and **NODE2** are intersections or landmarks
+- **COST** is the travel time between them
+
+Each edge is bidirectional, so you can travel both ways on any street.
+
+### Example
+
+```
+MainSt_1st|MainSt_2nd|3
+MainSt_2nd|Oak_2nd|5
+Oak_2nd|Oak_3rd|2
+```
+
+This would represent three street segments with travel times of 3, 5, and 2 minutes respectively.
+
+## How It Works
+
+1. **Parse the data** - Read in the city map and build a graph structure
+2. **Build the graph** - Create adjacency lists with weighted edges
+3. **Run SPF algorithm** - Given a start (restaurant) and end (customer), find the shortest path
+4. **Output the route** - Return the optimal path and total delivery time
+
+## Why This Matters
+
+In the real world, shaving even a few minutes off each delivery adds up. For a service doing hundreds of deliveries a day, efficient routing can mean:
+
+- Happier customers (nobody likes cold food)
+- Lower fuel costs
+- More deliveries per driver
+- Better driver satisfaction
+
+This project is a simplified version of what companies like DoorDash and Uber Eats deal with, minus the real-time traffic updates and multiple simultaneous deliveries.
+
+## Future Improvements
+
+Some things I'd like to add:
+
+- Real-time traffic weighting
+- Multiple delivery optimization (traveling salesman style)
+- Visual map output
+- API integration for real city data
+
+## Running the Code
+
+Check the starter code in the repository. The main algorithm takes a start node and end node and returns the optimal path with total cost.
+
+---
+
+*This project was built to explore graph algorithms and their practical applications in logistics optimization.*
